@@ -1,0 +1,19 @@
+
+Question #14 (of 16)
+[Servicing and Networking | 20% Weight | 6.3 pts]
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Task 1:
+- Create a Deployment called blue with 6 replicas, using the nginx image 1.26.3
+  inside the tiger Namespace
+- Label the Pods app=blue and tier=web
+- Expose port 80 for the nginx containers
+
+Task 2:
+- Create a Service called web-srv to route traffic to blue app
+
+Task 3:
+- Create an identical Deployment named canary-green-deployment, in the same Namespace
+- Modify the Deployment so that:
+  A maximum number of 10 Pods run in the tiger Namespace
+  40% of the web-srv Service's traffic goes to the canary-green-deployment
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hotfix-deployment
+  namespace: quetzal
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hotfix
+  template:
+    metadata:
+      labels:
+        app: hotfix
+    spec:
+      containers:
+      - name: hotfix-container
+        image: nginxinc/nginx-unprivileged
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+          value: rootpass
+        ports:
+        - containerPort: 8080
