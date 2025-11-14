@@ -139,6 +139,7 @@ printf '\n'
 # Create empty dirs to be used during exam
 mkdir CKAD-Exam-Questions/tmp
 mkdir CKAD-Exam-Questions/data1
+mkdir /var/data
 
 # Sleep for troubleshooting resource creation, then clear before showing all questions again
 sleep 5
