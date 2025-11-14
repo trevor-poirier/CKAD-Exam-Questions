@@ -136,6 +136,10 @@ kubectl apply -f ./CKAD-Exam-Questions/Q16/np.yaml
 
 printf '\n'
 
+# Create empty dirs to be used during exam
+mkdir CKAD-Exam-Questions/tmp
+mkdir CKAD-Exam-Questions/data1
+
 # Sleep for troubleshooting resource creation, then clear before showing all questions again
 sleep 5
 clear
