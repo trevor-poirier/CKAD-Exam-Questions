@@ -30,22 +30,22 @@ kubectl create ns dev
 
 NS=$(shuf -i 1-4 -n 1)
 if [ $NS -eq 1 ]; then
-  kubectl apply -f ./CKAD-Exam-Questions/Q8/pod.yaml -n qa
+  kubectl apply -f ./CKAD-Exam-Questions/Q7/pod.yaml -n qa
   kubectl run liveness-pod --image=busybox -n lab --restart=OnFailure -- sleep 6
   kubectl create deploy liveness -n prod --image=nginx --replicas=0
   kubectl run failed-liveness -n dev --image=busybox -- sleep 6000
 elif [ $NS -eq 2 ]; then
-  kubectl apply -f ./CKAD-Exam-Questions/Q8/pod.yaml -n lab
+  kubectl apply -f ./CKAD-Exam-Questions/Q7/pod.yaml -n lab
   kubectl run liveness-pod --image=busybox -n qa --restart=OnFailure -- sleep 6
   kubectl create deploy liveness -n prod --image=nginx --replicas=0
   kubectl run failed-liveness -n dev --image=busybox --restart=Never -- sleep 1
 elif [ $NS -eq 3 ]; then
-  kubectl apply -f ./CKAD-Exam-Questions/Q8/pod.yaml -n prod
+  kubectl apply -f ./CKAD-Exam-Questions/Q7/pod.yaml -n prod
   kubectl run liveness-pod --image=busybox -n dev --restart=OnFailure -- sleep 6
   kubectl create deploy liveness -n lab --image=nginx --replicas=0
   kubectl run failed-liveness -n qa --image=busybox -- sleep 6000
 else
-  kubectl apply -f ./CKAD-Exam-Questions/Q8/pod.yaml -n dev
+  kubectl apply -f ./CKAD-Exam-Questions/Q7/pod.yaml -n dev
   kubectl run liveness-pod --image=busybox -n prod --restart=Never -- sleep 6
   kubectl create deploy liveness -n qa --image=nginx --replicas=0
   kubectl run failed-liveness -n lab --image=busybox --restart=OnFailure -- echo ""
@@ -53,6 +53,7 @@ fi
 
 # Q8
 printf '\nQ8\n'
+kubectl create ns meta
 kubectl apply -f ./CKAD-Exam-Questions/Q8/deploy.yaml
 
 # Q9
