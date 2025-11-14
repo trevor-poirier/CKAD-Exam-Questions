@@ -5,11 +5,13 @@ Question #14 (of 16)
 Task 1:
 - Create a Deployment called blue with 6 replicas, using the nginx image 1.26.3
   inside the tiger Namespace
-- Label the Pods app=blue and tier=web
-- Expose port 80 for the nginx containers
+- Add the func=webFrontEnd key/value label to the pod template metadata to identify
+  the Pods for the Service definition later on
+- Expose port 8080 for the nginx containers
 
 Task 2:
-- Create a Service called web-srv to route traffic to blue app
+- Create a Service of type NodePort called web-srv to route traffic to blue app
+  using TCP port 8080
 
 Task 3:
 - Create an identical Deployment named canary-green-deployment, in the same Namespace

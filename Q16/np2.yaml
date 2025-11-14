@@ -1,0 +1,27 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: allow-traffic
+  namespace: ckad0021
+spec:
+  podSelector:
+    matchLabels:
+      enable-all: "true"
+  policyTypes:
+    - Ingress
+    - Egress
+  ingress:
+    - from:
+      - namespaceSelector:
+          matchLabels:
+            kubernetes.io/metadata.name: ckad0021
+        podSelector:
+          matchLabels:
+            app: secure-app
+  egress:
+    - to:
+      - ipBlock:
+          cidr: 10.0.0.0/24
+      ports:
+      - protocol: TCP
+        port: 6379
