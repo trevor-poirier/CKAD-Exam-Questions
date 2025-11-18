@@ -145,7 +145,7 @@ mkdir CKAD-Exam-Questions/data1
 mkdir /var/data
 
 # Sleep for troubleshooting resource creation, then clear before showing all questions again
-sleep 4
+sleep 5
 clear
 printf '\n\nNow you can begin. Attempt to solve using only the official kubernetes.io documentation.'
 printf '\nIt will be easiest to open up a second terminal tab to solve the questions, keeping this first tab with the displayed questions to refer to.\n'
