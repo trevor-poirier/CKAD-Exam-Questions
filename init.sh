@@ -1,8 +1,10 @@
-# Q1 - Question only
+# Q1
 printf '\nQ1\n'
 
-# Q2 - Question only
+# Q2
 printf '\nQ2\n'
+kubectl create ns quetzal
+kubectl apply -f ./CKAD-Exam-Questions/hotfix-deployment.yaml
 
 # Q3
 printf '\nQ3\n'
