@@ -8,6 +8,9 @@ A Pod within the Deployment named dev-deployment in meta Namespace is logging er
    'User "system:serviceaccount:meta:default cannot list resource "deployment"[...]
    in the namespace meta'.
 
-2) Resolve the errors from the logs of the Pod so that the Deployment runs 
+2) Retrieve all currently available application logs from the running pod and store
+   them in the file ~/log_output.txt
+
+3) Resolve the errors from the logs of the Pod so that the Deployment runs 
    successfully. The dev-deployment manifest can be found at ~/dev-deployment.yaml
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -120,6 +120,11 @@ kubectl expose pod liveness-http --name=liveness-http --port=8080 --type=Cluster
 
 # Q13
 printf '\nQ13\n'
+kubectl create ns cpu-stress
+kubectl apply -f ./CKAD-Exam-Questions/Q13/pod.yaml
+kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+kubectl patch deployment metrics-server -n kube-system --type=json -p='[{"op": "add", "path": "/spec/template/spec/containers/0/args/-", "value": "--kubelet-insecure-tls"}]'
+systemctl restart kubelet
 
 # Q14
 printf '\nQ14\n'

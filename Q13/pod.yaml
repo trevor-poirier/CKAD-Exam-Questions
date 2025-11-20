@@ -1,0 +1,35 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: stress-1
+  namespace: cpu-stress
+spec:
+  containers:
+  - image: redis
+    name: c1
+    resources:
+      requests:
+        memory: 256Mi
+        cpu: 250m
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: stress-2
+  namespace: cpu-stress
+spec:
+  containers:
+  - image: busybox
+    name: c1
+    command: [ "sh", "-c", "while true; do :; done" ]
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: stress-3
+  namespace: cpu-stress
+spec:
+  containers:
+  - image: busybox
+    name: c1
+    command: [ "sh", "-c", "while true; do usleep 50000; done" ]
