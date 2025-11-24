@@ -13,6 +13,7 @@ printf '\nQ3\n'
 printf '\nQ4\n'
 kubectl create namespace ns-quota1
 kubectl -n ns-quota1 create deployment resource-deploy --image=nginx --replicas=1
+kubectl -n ns-quota1 set resources deployment/resource-deploy --requests=cpu=100m --limits=memory=650Mi,cpu=200m
 kubectl apply -f ./CKAD-Exam-Questions/Q4/resource-quota.yaml
 
 # Q5
