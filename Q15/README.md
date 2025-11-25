@@ -8,5 +8,7 @@ Deployment to place its PODs on controlplane node only.
 
 Set NodeAffinity to requiredDuringSchedulingIgnoredDuringExecution
 
+Remove the NoSchedule taint on the controlplane node
+
 Create the Deployment and verify that the Pods are all on the controlplane node.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
