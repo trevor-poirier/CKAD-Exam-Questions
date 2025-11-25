@@ -11,7 +11,7 @@ spec:
     args:
     - /server
     livenessProbe:
-      failureThreshold: 10
+      failureThreshold: 5
       httpGet:
         path: /
         port: 8080
