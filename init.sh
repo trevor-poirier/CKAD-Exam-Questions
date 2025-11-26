@@ -142,6 +142,7 @@ kubectl -n ckad0021 run storage --image=nginx  --labels=app=secure-app
 kubectl -n ckad0021 run ckad0021-newpod --image=nginx
 kubectl apply -f ./CKAD-Exam-Questions/Q16/np1.yaml
 kubectl apply -f ./CKAD-Exam-Questions/Q16/np2.yaml
+kubectl apply -f ./CKAD-Exam-Questions/Q16/np3.yaml
 
 printf '\n'
 
