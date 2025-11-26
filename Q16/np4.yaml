@@ -1,45 +1,45 @@
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
-  name: storage-netpol
+  name: web-storage-internal-netpol
   namespace: ckad0021
 spec:
   podSelector:
     matchLabels:
-      run: storage
+      app: secure-app
   policyTypes:
-    - Ingress
-    - Egress
+  - Ingress
+  - Egress
   ingress:
-    - from:
-      - podSelector:
-          matchLabels:
-            run: web
+  - from:
+    - podSelector:
+        matchLabels:
+          app: secure-app
   egress:
-    - to:
-      - podSelector:
-          matchLabels:
-            run: web
+  - to:
+    - podSelector:
+        matchLabels:
+          app: secure-app
 ---
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
-  name: web-netpol
+  name: web-storage-external-netpol
   namespace: ckad0021
 spec:
   podSelector:
     matchLabels:
-      run: web
+      app: secure-app
   policyTypes:
-    - Ingress
-    - Egress
+  - Ingress
+  - Egress
   ingress:
-    - from:
-      - podSelector:
-          matchLabels:
-            run: storage
+  - from:
+    - podSelector:
+        matchLabels:
+          allow-access: "true"
   egress:
-    - to:
-      - podSelector:
-          matchLabels:
-            run: storage
+  - to:
+    - podSelector:
+        matchLabels:
+          allow-access: "true"

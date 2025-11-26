@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
-  name: traffic-in-out
+  name: ckad0021-newpod-netpol-allow
   namespace: ckad0021
 spec:
   podSelector:
