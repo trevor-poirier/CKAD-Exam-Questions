@@ -137,9 +137,9 @@ printf '\nQ15\n'
 # Q16
 printf '\nQ16\n'
 kubectl create ns ckad0021 
-kubectl -n ckad0021 run www --image=nginx --labels=app=secure-app
-kubectl -n ckad0021 run storage --image=nginx  --labels=app=secure-app
-kubectl -n ckad0021 run ckad0021-newpod --image=nginx
+kubectl -n ckad0021 run www --image=nginx --labels=app=secure-app --port=80
+kubectl -n ckad0021 run storage --image=nginx  --labels=app=secure-app --port=80
+kubectl -n ckad0021 run ckad0021-newpod --image=nginx --port=80
 kubectl apply -f ./CKAD-Exam-Questions/Q16/np1.yaml
 kubectl apply -f ./CKAD-Exam-Questions/Q16/np2.yaml
 kubectl apply -f ./CKAD-Exam-Questions/Q16/np3.yaml
