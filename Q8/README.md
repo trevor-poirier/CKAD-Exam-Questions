@@ -1,5 +1,5 @@
 
-Question #8 (of 18)
+Question #8 (of 16)
 [Troubleshooting | 30% Weight | 9.4 pts]
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 A Pod within the Deployment named dev-deployment in meta Namespace is logging errors.
